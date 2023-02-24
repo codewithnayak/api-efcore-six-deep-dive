@@ -11,5 +11,7 @@ namespace EFCoreDeepDive.Entities
         public decimal Price { get; set; }
 
         public Point Location { get; set; }
+
+        public CinemaOffer CinemaOffer { get; set; }
     }
 }
