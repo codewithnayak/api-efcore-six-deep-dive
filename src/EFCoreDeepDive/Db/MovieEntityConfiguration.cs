@@ -9,7 +9,7 @@ namespace EFCoreDeepDive.Db
         public void Configure(EntityTypeBuilder<Movie> builder)
         {
             builder.HasKey(_ => _.Id);
-            builder.Property(_ => _.Name).IsRequired().HasMaxLength(200);
+            builder.Property(_ => _.Title).IsRequired().HasMaxLength(200);
             builder.Property(_ => _.Id).UseIdentityColumn(1, 1);
             builder.Property(_ => _.PosterUrl).IsUnicode(false);
 

@@ -1,4 +1,5 @@
-﻿using EFCoreDeepDive.Entities;
+﻿using EFCoreDeepDive.Db.Seed;
+using EFCoreDeepDive.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -29,10 +30,30 @@ namespace EFCoreDeepDive.Db
         /// <summary>
         /// 
         /// </summary>
+        public DbSet<CinemaHall> CinemaHalls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<MovieActor> MovieActors { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="options"></param>
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
            
+        }
+
+        /// <summary>
+        /// This is the place where global conventions can be configured ,
+        /// like all string lenghts are 200 for an example.
+        /// </summary>
+        /// <param name="configurationBuilder"></param>
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            base.ConfigureConventions(configurationBuilder);
         }
 
         /// <summary>
@@ -45,6 +66,9 @@ namespace EFCoreDeepDive.Db
             
             //TODO:Can be kept in a separate project , will do later 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            MovieDbSeeder.Seed(modelBuilder);
+
+
         }
     }
 }

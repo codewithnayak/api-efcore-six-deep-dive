@@ -8,5 +8,7 @@
         public string Biography { get; set; }
 
         public DateOnly DateOfBirth { get; set; }
+
+        public HashSet<MovieActor> MovieActors { get; set; }
     }
 }

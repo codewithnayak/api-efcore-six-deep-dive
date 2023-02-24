@@ -11,7 +11,7 @@ namespace EFCoreDeepDive.Db
             builder.HasKey(_ => _.Id);
             builder.Property(_ => _.Name).IsRequired().HasMaxLength(200);
             builder.Property(_ => _.Id).UseIdentityColumn(1, 1);
-            builder.Property(_ => _.Price).HasPrecision(5, 2);
+            
            
         }
     }

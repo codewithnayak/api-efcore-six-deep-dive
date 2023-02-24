@@ -8,10 +8,10 @@ namespace EFCoreDeepDive.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public decimal Price { get; set; }
-
         public Point Location { get; set; }
 
         public CinemaOffer CinemaOffer { get; set; }
+
+        public List<CinemaHall> CinemaHalls { get; set; }
     }
 }
